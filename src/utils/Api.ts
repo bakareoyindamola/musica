@@ -26,7 +26,7 @@ publicAxios.interceptors.response.use(
   (error) => {
     const code = error && error.response ? error.response.status : 0;
     if (code === 401 || code === 403 || code === 410 || code === 404) {
-      console.error("I don't care about what happens.");
+      // console.error("I don't care about what happens.");
     }
     return Promise.reject(error);
   }
