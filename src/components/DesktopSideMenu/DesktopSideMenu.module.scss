@@ -1,0 +1,34 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  background: $background;
+  z-index: 998;
+  padding: 9.6rem 2rem;
+  min-width: 92px;
+  max-width: 92px;
+  flex-direction: column;
+  gap: 2rem;
+  display: none;
+
+  @include Desktop {
+    display: flex;
+  }
+
+}
+
+.innerContainer {
+  background: #1A1E1F;
+  border-radius: 32px;
+  width: 100%;
+  padding: 2.5rem 1.4rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.1rem;
+}

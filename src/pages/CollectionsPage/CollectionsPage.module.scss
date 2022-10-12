@@ -1,0 +1,39 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.container {
+  @include PageLayout;
+  padding-right: 3rem;
+}
+
+.actionsWrapper {
+  margin-bottom: 3.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+
+  button {
+    opacity: 0.25;
+    border: 1px solid #EFEEE0;
+    border-radius: 27px;
+    padding: 1rem;
+    flex: 1;
+    font-size: 14px;
+    line-height: 120%;
+    color: #EFEEE0;
+    cursor: pointer;
+
+    //background: #FACD66;
+    //color: #1D2123;
+    //border: 1px solid #FACD66;
+  }
+
+  @include Desktop {
+    max-width: 214px;
+    gap: 1rem;
+
+    button:last-of-type {
+      flex: .5;
+    }
+  }
+}

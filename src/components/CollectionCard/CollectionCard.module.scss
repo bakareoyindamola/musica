@@ -1,0 +1,77 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.container {
+  position: relative;
+  height: 234px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .3s ease-in-out;
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.3);
+    }
+  }
+
+  @include Desktop {
+   min-width: 213px;
+   max-width: 213px;
+  }
+}
+
+.overlay {
+  position: absolute;
+  background: linear-gradient(179.89deg, rgba(0, 0, 0, 0) 0.1%, rgba(15, 18, 19, 0.85) 80.67%);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 796;
+}
+
+.textWrapper {
+  position: absolute;
+  z-index: 800;
+  bottom: 19px;
+  left: 19px;
+  width: calc(100% - 37px);
+
+  h5 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 120%;
+    color: $light-text-color;
+    margin-bottom: .1rem;
+  }
+
+  .musicianName {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 120%;
+    color: $light-text-color;
+    opacity: 0.75;
+  }
+
+  .bottomWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  @include Desktop {
+    bottom: 22px;
+
+    .bottomWrapper {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,197 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.container {
+  position: fixed;
+  bottom: 0;
+  height: 125px;
+  width: 100%;
+  background: rgba(29, 33, 35, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 999;
+  gap: 3.5rem;
+
+  .info {
+    display: flex;
+    align-items: center;
+    gap: 12.23px;
+
+    .imageWrapper {
+      width: 57.41px;
+      height: 57.41px;
+      box-shadow: 0 17.5746px 19.9179px -11.7164px rgba(0, 0, 0, 0.61);
+      border-radius: 16.403px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 16.403px;
+      }
+    }
+
+    h5 {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 1.64rem;
+      line-height: 120%;
+      color: $white;
+      margin-bottom: 0.34rem;
+    }
+
+    p {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 1.17rem;
+      line-height: 120%;
+      color: rgba(255, 255, 255, 0.44);
+    }
+  }
+
+  .controls {
+
+    .desktopControls {
+      display: none;
+    }
+
+    .musicProgressBar {
+      display: none;
+      cursor: pointer;
+    }
+
+    .topControls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-direction: row;
+
+      @include Desktop {
+        gap: 3.36rem;
+      }
+    }
+
+    button {
+      width: 34.1px;
+      height: 34.84px;
+      border-radius: 135.263px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .buttonActive {
+      background: #FACD66;
+
+      @include Desktop {
+        box-shadow: 0 0 18px rgba(255, 255, 255, 0.3);
+      }
+    }
+
+    @include Desktop {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1;
+
+      .desktopControls {
+        display: block;
+      }
+
+      .musicProgressBar {
+        margin-top: 2.74rem;
+        @include ProgressBar;
+      }
+
+      .musicInnerProgressBar {
+        @include InnerProgressBar;
+      }
+
+      .moverWrapper {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-radius: 6px;
+        border: 1px solid #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: -4px;
+        left: 0;
+        transition: left .2s ease-in-out;
+
+        .mover {
+          width: 8px;
+          height: 8px;
+          border-radius: 4px;
+          background: #FACD66;
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.92);
+        }
+      }
+    }
+  }
+
+  .volume {
+    display: none;
+
+    @include Desktop {
+      width: 184px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .6rem;
+
+      .volumeProgressBar {
+        //@include ProgressBar;
+        display: flex;
+        width: 100%;
+        height: 4px;
+        border-radius: 46px;
+
+        input[type=range],
+        input[type=range]::-webkit-slider-runnable-track,
+        input[type=range]::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          cursor: pointer;
+        }
+
+        .progressBar {
+          width: 100%;
+          height: 3px;
+          outline: none;
+          cursor: pointer;
+          background: rgba(255, 255, 255, 0.01);
+          border-radius: 46px;
+          overflow: hidden;
+        }
+
+        .progressBar::-webkit-slider-thumb {
+          -webkit-appearance: none; /* Override default look */
+          appearance: none;
+          background-color: #FACD66;
+          width: 10px;
+          height: 3px;
+        }
+
+        .progressBar::-moz-range-thumb {
+          width: 0.5em;
+          height: 0.5em;
+          background-color: #FACD66;
+          border-radius: 46px;
+          border: none;
+        }
+      }
+
+      .volumeInnerProgressBar {
+        @include InnerProgressBar;
+      }
+    }
+  }
+}

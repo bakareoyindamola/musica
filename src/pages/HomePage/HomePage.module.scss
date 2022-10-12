@@ -1,0 +1,32 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.container {
+
+}
+
+.main {
+
+}
+
+.section {
+  @include PageLayout;
+}
+
+.topContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4.7rem;
+
+  @include Desktop {
+    flex-direction: row;
+    gap: 2.2rem;
+  }
+}
+
+.bottomContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-top: 4.7rem;
+}

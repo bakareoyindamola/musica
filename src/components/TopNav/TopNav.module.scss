@@ -1,0 +1,22 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.3rem 2.7rem;
+  margin-bottom: 0.5rem;
+  position: sticky;
+  top: 0;
+  background: $background;
+  z-index: 999;
+
+  @include Desktop {
+    background: transparent;
+
+    button {
+      display: none;
+    }
+  }
+}

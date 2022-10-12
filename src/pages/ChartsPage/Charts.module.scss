@@ -1,0 +1,11 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.container {
+  @include PageLayout;
+  padding-right: 3rem;
+}
+
+.innerContent {
+  margin-top: 2.5rem;
+}

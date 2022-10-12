@@ -1,25 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+import { store } from "./store";
+
+// Routes
+import { HOME_URL, CHARTS_URL, COLLECTIONS_URL } from "./routes";
+
+// Styles
+import "./styles/global.scss";
+
+// Pages
+import { HomePage, ChartsPage, CollectionsPage } from "./pages";
+
+// Components
+import { MusicPlayer, TopNav, DesktopSideMenu } from "./components";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Provider store={store}>
+        <TopNav />
+        <section>
+          <DesktopSideMenu />
+          <Routes>
+            <Route path={HOME_URL} element={<HomePage />} />
+            <Route path={CHARTS_URL} element={<ChartsPage />} />
+            <Route path={COLLECTIONS_URL} element={<CollectionsPage />} />
+          </Routes>
+        </section>
+        <MusicPlayer />
+      </Provider>
+    </BrowserRouter>
   );
 }
 

@@ -1,0 +1,114 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.container {
+  background: rgba(51, 55, 59, 0.37);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 8px 9px 9px;
+  gap: 1.4rem;
+  margin-bottom: 10px;
+  width: 100%;
+
+  .title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 120%;
+    color: $white;
+    margin-bottom: .6rem;
+  }
+
+  .type,
+  .duration {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 120%;
+    color: #FFFFFF;
+  }
+
+  .duration {
+    margin-top: .8rem;
+  }
+
+  @include Desktop {
+    .title {
+      margin-bottom: 0;
+    }
+
+    .duration {
+      margin-top: 0;
+    }
+  }
+}
+
+.topContent {
+  .likeButton {
+    display: none;
+    cursor: pointer;
+  }
+
+  .imageWrapper {
+    width: 39px;
+    height: 39px;
+    border-radius: 5px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+    }
+  }
+
+  @include Desktop {
+    display: flex;
+    align-items: center;
+    gap: 2.13rem;
+    margin-right: 7.9rem;
+
+    .likeButton {
+      display: inline-block;
+    }
+  }
+}
+
+.bottomContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+
+  @include Desktop {
+    gap: 25%;
+  }
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @include Desktop {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+  }
+}
+
+.optionsWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: end;
+
+  @include Desktop {
+    flex: 1;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

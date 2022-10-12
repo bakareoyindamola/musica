@@ -1,0 +1,111 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+
+  h4 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3.5rem;
+    line-height: 120%;
+    color: $light-text-color;
+    margin-bottom: .9rem;
+  }
+
+  p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 120%;
+    color: $light-text-color;
+  }
+
+  .albumDetails {
+    margin-bottom: 1rem;
+  }
+
+  @include Desktop {
+    flex-direction: row;
+    gap: 2.7rem;
+    align-items: end;
+
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 289px;
+  border-radius: 25px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+  }
+
+  @include Desktop {
+    width: 284px;
+    height: 288.97px;
+  }
+}
+
+.contentWrapper {
+  @include Desktop {
+    max-width: 527px;
+  }
+}
+
+.buttonsWrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 2.5rem;
+  gap: 1.1rem;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(5px);
+    border-radius: 32px;
+    flex: 1;
+    cursor: pointer;
+
+    &:nth-of-type(2) {
+      flex: 2;
+    }
+  }
+
+  @include Desktop {
+    min-width: 292px;
+    max-width: 292px;
+    gap: .9rem;
+
+    button {
+      flex: .5;
+
+      &:nth-of-type(2) {
+        flex: 1;
+        width: 100%;
+      }
+
+      &:last-of-type {
+        max-width: 36px;
+        border-radius: 18px;
+
+        p {
+          display: none;
+        }
+      }
+    }
+  }
+}
